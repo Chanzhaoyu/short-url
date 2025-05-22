@@ -1,0 +1,45 @@
+{
+  "name": "short-url",
+  "version": "0.1.0",
+  "description": "An API on Hono.js to shorten urls",
+  "author": {
+    "name": "Chanzhaoyu",
+    "email": "chenzhaoyu1994@gmail.com",
+    "url": "https://github.com/Chanzhaoyu"
+  },
+  "main": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch --no-cache src/index.ts",
+    "build": "tsc --project tsconfig.json",
+    "build:tsup": "npx rimraf ./dist && tsup",
+    "start": "node ./dist/index.js",
+    "db:generate": "prisma generate",
+    "db:studio": "prisma studio",
+    "db:push": "prisma db push",
+    "format": "prettier --write .",
+    "pm2": "pm2 start ecosystem.config.cjs"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.12.0",
+    "@prisma/client": "^5.17.0",
+    "base62": "^2.0.2",
+    "dotenv": "^16.4.5",
+    "hono": "^4.5.0",
+    "node-cache": "^5.1.2",
+    "winston": "^3.13.1"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^8.2.0",
+    "@types/node": "^20.14.11",
+    "@typescript-eslint/eslint-plugin": "^7.16.1",
+    "@typescript-eslint/parser": "^7.16.1",
+    "eslint": "^9.7.0",
+    "prettier": "^3.3.3",
+    "prisma": "^5.17.0",
+    "tsup": "^8.2.2",
+    "tsx": "^4.16.2",
+    "typescript": "^5.5.3"
+  },
+  "packageManager": "pnpm@7.13.4+sha1.ab7fb3f13e4b62ccc49a7edefbd618c042560f75"
+}
